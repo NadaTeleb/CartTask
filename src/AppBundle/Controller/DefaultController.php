@@ -31,9 +31,7 @@ class DefaultController extends Controller
             //);
         }
         else {
-            return new Response(
-                '<html><body>Lucky number: '.$Items.'</body></html>'
-            );
+
         }
 
         // replace this example code with whatever you need
