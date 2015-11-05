@@ -19,25 +19,44 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-
         $Items = $this->getDoctrine()
             ->getRepository('AppBundle:Items')
             ->findAll();
 
         if (!$Items) {
-            //throw $this->createNotFoundException(
-              echo  'No items found ';
-            //);
+            echo  'No items found ';
         }
         else {
 
         }
-
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
             'items' => $Items,
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
         ));
     }
+
+//    /**
+//     * @Route("/", name="CaretItems/1")
+//     */
+//    public function caretItems(Request $request)
+//    {
+//    }
+//
+//    /**
+//     * @Route("/", name="homepage")
+//     */
+//    public function AddItem(Request $itemId)
+//    {
+//        $this->getDoctrine()
+//            ->getRepository('AppBundle:CartsItems')
+//            ->findAll();
+//
+//        $this->$entityManager->persist($entity);
+//          $entityManager->flush();
+//
+//        return $this->render('default/index.html.twig', array(
+//            'items' => $Items,
+//            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
+//        ));
+//    }
 }

@@ -4,11 +4,25 @@
     <div id="wrapper">
         <div id="container">
 
-            <div id="status">
+            <div>
+                <h1>
+                    <a href="#Orders in Caret">
+                        Orders in Caret:
+                        <span class="glyphicon glyphicon-shopping-cart">  &nbsp</span>
+                    </a>
+
+                    <a href="#Items in WishList">
+                        Items in WishList:
+                        <span class="glyphicon glyphicon-th"></span>
+                    </a>
+
+                </h1>
+            </div>
+
+
+            <div id="items">
                 <h2>Items</h2>
-
                 <p>
-
                     <table id="items" class="table table-striped">
                         <thead>
                         <tr>
@@ -19,23 +33,20 @@
                         </thead>
                         <tbody>
 
-
                         {% for item in items %}
-
                             <tr>
                                 <td>{{ item.name }}</td>
                                 <td>{{ item.price }}</td>
-                                <td><span class="glyphicon glyphicon-plus"></span>
-                                    <span class="glyphicon glyphicon-heart"></span>
-
-                                    
+                                <td>
+                                    <button type="button" class="btn btn-success">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
                                 </td>
                             </tr>
-
-
                         {% endfor %}
-
-
 
                         </tbody>
                     </table>

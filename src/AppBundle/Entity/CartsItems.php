@@ -34,6 +34,12 @@ class CartsItems {
      */
     private $CartID;
 
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $Quantity;
+
     //====================== SETTERS & GETTERS =====================//
     /**
      * @return mixed
@@ -82,5 +88,20 @@ class CartsItems {
     {
         $this->id = $id;
     }
+    //===========================================//
+    /**
+     * @return mixed
+     */
+    public function getQuantity()
+    {
+        return $this->Quantity;
+    }
 
+    /**
+     * @param mixed $Quantity
+     */
+    public function setQuantity($Quantity)
+    {
+        $this->Quantity = $Quantity;
+    }
 } 
